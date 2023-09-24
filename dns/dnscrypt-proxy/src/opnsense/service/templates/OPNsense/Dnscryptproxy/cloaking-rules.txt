@@ -1,0 +1,11 @@
+{% if helpers.exists('Muro.dnscryptproxy.general.enabled') and Muro.dnscryptproxy.general.enabled == '1' %}
+
+{% if helpers.exists('Muro.dnscryptproxy.cloak.cloaks.cloak') %}
+{%   for cloak_list in helpers.toList('Muro.dnscryptproxy.cloak.cloaks.cloak') %}
+{%     if cloak_list.enabled == '1' %}
+{{ cloak_list.name }} {{ cloak_list.destination }}
+{%     endif %}
+{%   endfor %}
+{% endif %}
+
+{% endif %}

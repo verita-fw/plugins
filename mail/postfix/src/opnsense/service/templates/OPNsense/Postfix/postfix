@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.postfix.general.enabled') and Muro.postfix.general.enabled == '1' %}
+postfix_setup="/usr/local/opnsense/scripts/Muro/Postfix/setup.sh"
+postfix_enable="YES"
+{% else %}
+postfix_enable="NO"
+{% endif %}

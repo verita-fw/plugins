@@ -1,0 +1,9 @@
+{% if helpers.exists('Muro.postfix.general.enabled') and Muro.postfix.general.enabled == '1' %}
+{%   if helpers.exists('Muro.postfix.general.smtpauth_enabled') and Muro.postfix.general.smtpauth_enabled == '1' %}
+{%     if helpers.exists('Muro.postfix.general.smtpauth_user') and Muro.postfix.general.smtpauth_user != '' %}
+{%       if helpers.exists('Muro.postfix.general.smtpauth_password') and Muro.postfix.general.smtpauth_password != '' %}
+{{ Muro.postfix.general.relayhost }} {{ Muro.postfix.general.smtpauth_user }}:{{ Muro.postfix.general.smtpauth_password }}
+{%       endif %}
+{%     endif %}
+{%   endif %}
+{% endif %}

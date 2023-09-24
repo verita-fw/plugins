@@ -1,0 +1,3 @@
+{% if helpers.exists('Muro.crowdsec.general') -%}
+    {{ Muro.crowdsec.general | tojson }}
+{%- endif %}

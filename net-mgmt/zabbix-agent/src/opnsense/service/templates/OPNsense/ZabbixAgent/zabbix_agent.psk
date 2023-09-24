@@ -1,0 +1,5 @@
+{% if helpers.exists('Muro.ZabbixAgent.settings.features.encryption') and Muro.ZabbixAgent.settings.features.encryption != '' %}
+{%   if helpers.exists('Muro.ZabbixAgent.settings.features.encryptionpsk') and Muro.ZabbixAgent.settings.features.encryptionpsk != '' %}
+{{ Muro.ZabbixAgent.settings.features.encryptionpsk }}
+{%   endif %}
+{% endif %}

@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.siproxd.general.enabled') and Muro.siproxd.general.enabled == '1' %}
+siproxd_setup="/usr/local/opnsense/scripts/Muro/Siproxd/setup.sh"
+siproxd_enable="YES"
+{% else %}
+siproxd_enable="NO"
+{% endif %}

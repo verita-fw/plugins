@@ -1,0 +1,13 @@
+{% if helpers.exists('Muro.openconnect.general.enabled') and Muro.openconnect.general.enabled == '1' %}
+openconnect_enable="YES"
+openconnect_flags="-s /usr/local/opnsense/scripts/Muro/Openconnect/vpnc.sh"
+{%   if helpers.exists('Muro.openconnect.general.server') and Muro.openconnect.general.server != '' %}
+{%     if helpers.exists('Muro.openconnect.general.user') and Muro.openconnect.general.user != '' %}
+{%       if helpers.exists('Muro.openconnect.general.password') and Muro.openconnect.general.password != '' %}
+openconnect_flags="${openconnect_flags} --config=/usr/local/etc/openconnect.conf {{ Muro.openconnect.general.server }}"
+{%       endif %}
+{%     endif %}
+{%   endif %}
+{% else %}
+openconnect_enable="NO"
+{% endif %}

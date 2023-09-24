@@ -1,0 +1,17 @@
+{% if helpers.exists('Muro.tayga.general.enabled') and Muro.tayga.general.enabled == '1' %}
+tayga_script="/usr/local/opnsense/scripts/Muro/Tayga/setup.sh"
+tayga_enable="YES"
+tayga_v4address={{ Muro.tayga.general.v4address }}
+tayga_v4destination={{ Muro.tayga.general.v4destination }}
+tayga_v4pool={{ Muro.tayga.general.v4pool }}
+tayga_v6prefix={{ Muro.tayga.general.v6prefix }}
+tayga_v6address={{ Muro.tayga.general.v6address }}
+tayga_v6destination={{ Muro.tayga.general.v6destination }}
+{% if helpers.exists('Muro.tayga.general.v6routedisabled') and Muro.tayga.general.v6routedisabled == '1' %}
+tayga_v6routedisabled="YES"
+{% else %}
+tayga_v6routedisabled="NO"
+{% endif %}
+{% else %}
+tayga_enable="NO"
+{% endif %}

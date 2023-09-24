@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.shadowsocks.general.enabled') and Muro.shadowsocks.general.enabled == '1' %}
+shadowsocks_libev_enable="YES"
+shadowsocks_libev_flags=""
+{% else %}
+shadowsocks_libev_enable="NO"
+{% endif %}

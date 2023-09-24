@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.clamav.general.enabled') and Muro.clamav.general.enabled == '1' %}
+clamav_clamd_setup="/usr/local/opnsense/scripts/Muro/ClamAV/setup.sh"
+clamav_clamd_enable="YES"
+{% else %}
+clamav_clamd_enable="NO"
+{% endif %}

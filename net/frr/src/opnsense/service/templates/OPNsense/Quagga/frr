@@ -1,0 +1,38 @@
+{% if helpers.exists('Muro.quagga.general.enabled') and Muro.quagga.general.enabled == '1' %}
+# XXX rc.d/frr splits up defunct "frr" service into frr_daemons
+# and we always start "zebra" so for now this works:
+zebra_setup="/usr/local/opnsense/scripts/frr/setup.sh"
+frr_enable="YES"
+{% if helpers.exists('Muro.quagga.general.enablecarp') and Muro.quagga.general.enablecarp == '1' %}
+start_precmd="ifconfig | grep 'carp: MASTER'"
+{% endif %}
+frr_daemons="zebra{%
+if helpers.exists('Muro.quagga.ospf.enabled') and Muro.quagga.ospf.enabled == '1' %} ospfd{% endif %}{%
+if helpers.exists('Muro.quagga.rip.enabled') and Muro.quagga.rip.enabled == '1' %} ripd{% endif %}{%
+if helpers.exists('Muro.quagga.bfd.enabled') and Muro.quagga.bfd.enabled == '1' %} bfdd{% endif %}{%
+if helpers.exists('Muro.quagga.bgp.enabled') and Muro.quagga.bgp.enabled == '1' %} bgpd{% endif %}{%
+if helpers.exists('Muro.quagga.ospf6.enabled') and Muro.quagga.ospf6.enabled == '1' %} ospf6d{% endif %}{%
+if helpers.exists('Muro.quagga.ripng.enabled') and Muro.quagga.ripng.enabled == '1' %} ripngd{% endif %}{%
+if helpers.exists('Muro.quagga.isis.enabled') and Muro.quagga.isis.enabled == '1' %} isisd{% endif %}"
+frr_carp_demote="{%
+    if not helpers.empty('Muro.quagga.ospf.carp_demote') %} ospfd{% endif %}{%
+    if not helpers.empty('Muro.quagga.ospf6.carp_demote') %} ospf6d{% endif
+%}"
+start_postcmd='
+	# XXX rc.d/frr declares its own post command we need to hook first
+	start_postcmd
+	# XXX rc.d/frr iterates through daemons so we need to hook last one
+	if [ "${frr_daemons}" != "${frr_daemons% ${name}}" ]; then
+		echo "Starting CARP event handler now"
+		/usr/local/opnsense/scripts/frr/carp_event_handler
+	fi
+'
+{% if Muro.quagga.general.enablesnmp == '1' %}
+zebra_flags="${zebra_flags} -M snmp"
+bgpd_flags="${bgpd_flags} -M snmp"
+ospf_flags="${ospf_flags} -M snmp"
+ospf6_flags="${ospf6_flags} -M snmp"
+{% endif %}
+{% else %}
+frr_enable="NO"
+{% endif %}

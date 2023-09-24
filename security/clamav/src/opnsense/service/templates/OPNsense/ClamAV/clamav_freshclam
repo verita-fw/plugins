@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.clamav.general.fc_enabled') and Muro.clamav.general.fc_enabled == '1' %}
+clamav_freshclam_setup="/usr/local/opnsense/scripts/Muro/ClamAV/setup.sh"
+clamav_freshclam_enable="YES"
+{% else %}
+clamav_freshclam_enable="NO"
+{% endif %}

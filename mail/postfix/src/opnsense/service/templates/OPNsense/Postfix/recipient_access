@@ -1,0 +1,9 @@
+{% if helpers.exists('Muro.postfix.general.enabled') and Muro.postfix.general.enabled == '1' %}
+{%   if helpers.exists('Muro.postfix.recipient.recipients.recipient') %}
+{%     for recipient_list in helpers.toList('Muro.postfix.recipient.recipients.recipient') %}
+{%       if recipient_list.enabled == '1' %}
+{{ recipient_list.address }} {{ recipient_list.action }}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+{% endif %}

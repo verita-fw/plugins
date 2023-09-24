@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.cicap.general.enabled') and Muro.cicap.general.enabled == '1' %}
+c_icap_setup="/usr/local/opnsense/scripts/Muro/CICAP/setup.sh"
+c_icap_enable="YES"
+{% else %}
+c_icap_enable="NO"
+{% endif %}

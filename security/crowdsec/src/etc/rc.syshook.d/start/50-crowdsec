@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# https://docs.opnsense.org/development/backend/autorun.html
+
+/usr/local/opnsense/scripts/Muro/CrowdSec/hub-upgrade.sh

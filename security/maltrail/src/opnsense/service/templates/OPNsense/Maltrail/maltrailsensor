@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.maltrail.sensor.enabled') and Muro.maltrail.sensor.enabled == '1' %}
+maltrailsensor_setup="/usr/local/opnsense/scripts/Muro/Maltrail/setup.sh"
+maltrailsensor_enable="YES"
+{% else %}
+maltrailsensor_enable="NO"
+{% endif %}

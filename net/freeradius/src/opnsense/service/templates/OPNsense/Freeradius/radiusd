@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.freeradius.general.enabled') and Muro.freeradius.general.enabled == '1' %}
+radiusd_setup="/usr/local/opnsense/scripts/Freeradius/setup.sh"
+radiusd_enable="YES"
+{% else %}
+radiusd_enable="NO"
+{% endif %}

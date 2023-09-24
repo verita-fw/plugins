@@ -1,0 +1,5 @@
+{% if helpers.exists('Muro.Rspamd.general.enabled') and Muro.Rspamd.general.enabled == '1' and helpers.exists('Muro.Rspamd.surbl.exceptions') and Muro.Rspamd.surbl.exceptions != '' %}
+{%   for host in Muro.Rspamd.surbl.exceptions.split(',') %}
+{{ host }}
+{%   endfor %}
+{% endif %}

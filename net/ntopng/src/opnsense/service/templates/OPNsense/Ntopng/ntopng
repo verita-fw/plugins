@@ -1,0 +1,7 @@
+{% if helpers.exists('Muro.ntopng.general.enabled') and Muro.ntopng.general.enabled == '1' %}
+ntopng_setup="/usr/local/opnsense/scripts/Muro/Ntopng/setup.sh"
+ntopng_enable="YES"
+ntopng_flags="/usr/local/etc/ntopng.conf"
+{% else %}
+ntopng_enable="NO"
+{% endif %}

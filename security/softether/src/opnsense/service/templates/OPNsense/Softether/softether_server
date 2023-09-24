@@ -1,0 +1,9 @@
+{% if helpers.exists('Muro.softether.general.enabled') and Muro.softether.general.enabled == '1' %}
+softether_server_setup="/usr/local/opnsense/scripts/Muro/Softether/setup.sh"
+softether_server_enable="YES"
+{% if helpers.exists('Muro.softether.general.enablecarp') and Muro.softether.general.enablecarp == '1' %}
+required_files="/var/run/softether/CARP_MASTER"
+{% endif %}
+{% else %}
+softether_server_enable="NO"
+{% endif %}

@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.tftp.general.enabled') and Muro.tftp.general.enabled == '1' %}
+tftpd_enable="YES"
+tftpd_flags="-s /usr/local/tftp -a {{ Muro.tftp.general.listen }}"
+{% else %}
+tftpd_enable="NO"
+{% endif %}

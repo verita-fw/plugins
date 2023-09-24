@@ -1,0 +1,14 @@
+{% if helpers.exists('Muro.dnscryptproxy.general.enabled') and Muro.dnscryptproxy.general.enabled == '1' %}
+dnscrypt_proxy_setup="/usr/local/opnsense/scripts/Muro/Dnscryptproxy/setup.sh"
+dnscrypt_proxy_enable="YES"
+{%   if helpers.exists('Muro.dnscryptproxy.general.allowprivileged') and Muro.dnscryptproxy.general.allowprivileged == '1' %}
+dnscrypt_proxy_suexec="YES"
+{%   endif %}
+{%   if helpers.exists('Muro.dnscryptproxy.dnsbl.enabled') and Muro.dnscryptproxy.dnsbl.enabled == '1' %}
+{%     if helpers.exists('Muro.dnscryptproxy.dnsbl.type') and Muro.dnscryptproxy.dnsbl.type != '' %}
+dnscrypt_proxy_dnsbl="{{ Muro.dnscryptproxy.dnsbl.type }}"
+{%     endif %}
+{%   endif %}
+{% else %}
+dnscrypt_proxy_enable="NO"
+{% endif %}

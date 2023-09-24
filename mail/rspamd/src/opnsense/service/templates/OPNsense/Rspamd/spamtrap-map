@@ -1,0 +1,5 @@
+{% if helpers.exists('Muro.Rspamd.general.enabled') and Muro.Rspamd.general.enabled == '1' and helpers.exists('Muro.Rspamd.spamtrap.spam_recipients') %}
+{%   for recipient in Muro.Rspamd.spamtrap.spam_recipients.split(',') %}
+/{{ recipient }}/i
+{%   endfor %}
+{% endif %}

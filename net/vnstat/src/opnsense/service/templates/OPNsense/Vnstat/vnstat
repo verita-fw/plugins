@@ -1,0 +1,14 @@
+{% if helpers.exists('Muro.vnstat.general.enabled') and Muro.vnstat.general.enabled == '1' %}
+{% from 'Muro/Macros/interface.macro' import physical_interface %}
+vnstat_setup="/usr/local/opnsense/scripts/Muro/Vnstat/setup.sh"
+vnstat_enable="YES"
+{%   if helpers.exists('Muro.vnstat.general.interface') and Muro.vnstat.general.interface != '' %}
+{%     set interfaces = [] %}
+{%     for interface in Muro.vnstat.general.interface.split(',') %}
+{%       do interfaces.append(physical_interface(interface)) %}
+{%     endfor %}
+vnstat_additional_ifaces="{{ interfaces|join(' ') }}"
+{%   endif %}
+{% else %}
+vnstat_enable="NO"
+{% endif %}

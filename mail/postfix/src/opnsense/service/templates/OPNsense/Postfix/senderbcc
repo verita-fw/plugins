@@ -1,0 +1,9 @@
+{% if helpers.exists('Muro.postfix.general.enabled') and Muro.postfix.general.enabled == '1' %}
+{%   if helpers.exists('Muro.postfix.senderbcc.senderbccs.senderbcc') %}
+{%     for sender_list in helpers.toList('Muro.postfix.senderbcc.senderbccs.senderbcc') %}
+{%       if sender_list.enabled == '1' %}
+{{ sender_list.from }} {{ sender_list.to }}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+{% endif %}
