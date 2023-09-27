@@ -1,0 +1,6 @@
+{% if helpers.exists('Muro.collectd.general.enabled') and Muro.collectd.general.enabled == '1' %}
+collectd_setup="/usr/local/opnsense/scripts/Muro/Collectd/setup.sh"
+collectd_enable="YES"
+{% else %}
+collectd_enable="NO"
+{% endif %}

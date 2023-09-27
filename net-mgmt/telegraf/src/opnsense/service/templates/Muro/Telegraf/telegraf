@@ -1,0 +1,11 @@
+{% if helpers.exists('Muro.telegraf.general.enabled') and Muro.telegraf.general.enabled == '1' %}
+{%   if Muro.telegraf.general.wheelgroup == '1' %}
+telegraf_user="root"
+telegraf_group="wheel"
+{%   endif %}
+telegraf_setup="/usr/local/opnsense/scripts/Muro/Telegraf/setup.sh"
+telegraf_enable="YES"
+telegraf_confdir="/usr/local/etc/telegraf.d"
+{% else %}
+telegraf_enable="NO"
+{% endif %}

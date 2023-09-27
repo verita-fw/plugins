@@ -1,0 +1,19 @@
+<model>
+    <mount>//Muro/GridExample</mount>
+    <description>
+        the Muro "GridExample" application
+    </description>
+    <items>
+        <addresses>
+            <address type="ArrayField">
+                <enabled type="BooleanField">
+                    <default>1</default>
+                    <Required>Y</Required>
+                </enabled>
+                <email type="EmailField">
+                    <Required>Y</Required>
+                </email>
+            </address>
+        </addresses>
+    </items>
+</model>
