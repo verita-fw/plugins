@@ -50,14 +50,14 @@
     <div id="introduction" class="tab-pane fade in active">
         <h1>Introduction</h1>
 
-        <p>This plugin installs a CrowdSec agent/<a href="https://doc.crowdsec.net/docs/next/local_api/intro">LAPI</a>
+        <p>This plugin installs a IDPS (Secondary Engine) agent/<a href="https://doc.crowdsec.net/docs/next/local_api/intro">LAPI</a>
         node, and a <a href="https://docs.crowdsec.net/docs/bouncers/firewall/">Firewall Bouncer</a>.</p>
 
         <p>Out of the box, by enabling them in the "Settings" tab, they can protect the Muro server
         by receiving thousands of IP addresses of active attackers, which are immediately banned at the
         firewall level. In addition, the logs of the ssh service and Muro administration interface are
         analyzed for possible brute-force attacks; any such scenario triggers a ban and is reported to the
-        CrowdSec Central API
+        IDPS (Secondary Engine) Central API
         (meaning <a href="https://docs.crowdsec.net/docs/concepts/">timestamp, scenario, attacking IP</a>).</p>
 
         <p>Other attack behaviors can be recognized on the Muro server and its plugins, or
@@ -72,7 +72,7 @@
 
         <p>For the latest plugin documentation, including how to use it with an external LAPI, see <a
         href="https://docs.crowdsec.net/docs/next/getting_started/install_crowdsec_opnsense">Install
-        CrowdSec (Muro)</a></p>
+        IDPS (Secondary Engine) (Muro)</a></p>
 
         <p>A few remarks:</p>
 
@@ -88,7 +88,7 @@
                 See <a href="https://github.com/crowdsecurity/opnsense-plugin-crowdsec/blob/main/src/etc/crowdsec/acquis.d/opnsense.yaml">acquis.d/opnsense.yaml</a>
             </li>
             <li>
-                At the moment, the CrowdSec package for Muro is fully functional on the
+                At the moment, the IDPS (Secondary Engine) package for Muro is fully functional on the
                 command line but its web interface is limited; you can only list the installed objects and revoke
                 <a href="https://docs.crowdsec.net/docs/user_guides/decisions_mgmt/">decisions</a>. For anything else
                 you need the shell.
@@ -116,14 +116,14 @@
                 Console
             </a>
             <a class="btn btn-default btn-info" href="https://hub.crowdsec.net/">
-                CrowdSec Hub
+                IDPS (Secondary Engine) Hub
             </a>
         </div>
 
         <h1>Installation</h1>
 
         <p>
-            On the Settings tab, you can expose CrowdSec to the LAN for other servers by changing `LAPI listen address`.
+            On the Settings tab, you can expose IDPS (Secondary Engine) to the LAN for other servers by changing `LAPI listen address`.
             Otherwise, leave the defualt value.
         </p>
 
@@ -154,7 +154,7 @@
 
 	<p>
 	    This is a more secure way to test than attempting to brute-force
-	    yourself: the default ban period is 4 hours, and Crowdsec reads the
+	    yourself: the default ban period is 4 hours, and IDPS (Secondary Engine) reads the
 	    logs from the beginning, so it could ban you even if you failed ssh
 	    login 10 times in 30 seconds two hours before installing it.
 	</p>
