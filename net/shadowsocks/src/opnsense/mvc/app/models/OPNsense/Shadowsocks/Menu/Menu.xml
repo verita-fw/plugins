@@ -1,8 +1,0 @@
-<menu>
-  <Services>
-    <ShadowSocks order="360">
-      <Server url="/ui/shadowsocks/general/index" order="10"/>
-      <Local url="/ui/shadowsocks/local/index" order="20"/>
-    </ShadowSocks>
-  </Services>
-</menu>

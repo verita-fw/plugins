@@ -1,7 +1,0 @@
-<menu>
-  <Services>
-    <Chrony cssClass="fa fa-clock-o">
-      <General url="/ui/chrony/general/index"/>
-    </Chrony>
-  </Services>
-</menu>

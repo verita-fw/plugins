@@ -1,6 +1,0 @@
-{% if helpers.exists('Muro.lldpd.general.enabled') and Muro.lldpd.general.enabled == '1' %}
-lldpd_enable="YES"
-lldpd_flags="{% if helpers.exists('Muro.lldpd.general.cdp') and Muro.lldpd.general.cdp == '1' %}-c{% endif %}{% if helpers.exists('Muro.lldpd.general.fdp') and Muro.lldpd.general.fdp == '1' %} -f{% endif %}{% if helpers.exists('Muro.lldpd.general.edp') and Muro.lldpd.general.edp == '1' %} -e{% endif %}{% if helpers.exists('Muro.lldpd.general.sonmp') and Muro.lldpd.general.sonmp == '1' %} -s{% endif %}{% if helpers.exists('Muro.lldpd.general.interface') and Muro.lldpd.general.interface != '' %} -I {{ Muro.lldpd.general.interface }}{% endif %} -M 4"
-{% else %}
-lldpd_enable="NO"
-{% endif %}

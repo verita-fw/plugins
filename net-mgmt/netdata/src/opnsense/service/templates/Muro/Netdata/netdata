@@ -1,6 +1,0 @@
-{% if helpers.exists('Muro.netdata.general.enabled') and Muro.netdata.general.enabled == '1' %}
-netdata_setup="/usr/local/opnsense/scripts/Muro/Netdata/setup.sh"
-netdata_enable="YES"
-{% else %}
-netdata_enable="NO"
-{% endif %}

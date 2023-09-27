@@ -1,3 +1,0 @@
-puppetagent.conf:/usr/local/etc/puppet/puppet.conf
-newsyslog.conf:/etc/newsyslog.conf.d/puppet-agent
-rc.conf.d:/etc/rc.conf.d/puppet

@@ -1,5 +1,0 @@
-<menu>
-    <Services>
-      <PrometheusExporter VisibleName="Prometheus Exporter" cssClass="fa fa-area-chart" url="/ui/nodeexporter/general/index"/>
-    </Services>
-</menu>

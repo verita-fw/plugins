@@ -1,6 +1,0 @@
-{% if helpers.exists('Muro.zabbixproxy.general.enabled') and Muro.zabbixproxy.general.enabled == '1' %}
-zabbix_proxy_setup="/usr/local/opnsense/scripts/Muro/Zabbixproxy/setup.sh"
-zabbix_proxy_enable="YES"
-{% else %}
-zabbix_proxy_enable="NO"
-{% endif %}

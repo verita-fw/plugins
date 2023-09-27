@@ -1,8 +1,0 @@
-<form>
-    <field>
-        <id>general.enabled</id>
-        <label>Enable</label>
-        <type>checkbox</type>
-        <help>Enable HW-Probe.</help>
-    </field>
-</form>

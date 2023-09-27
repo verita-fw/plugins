@@ -1,5 +1,0 @@
-#!/bin/sh
-
-export xenguest_enable="YES"
-
-/usr/local/etc/rc.d/xenguest start

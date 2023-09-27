@@ -1,2 +1,0 @@
-telegraf:/etc/rc.conf.d/telegraf
-telegraf.conf:/usr/local/etc/telegraf.conf

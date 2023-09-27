@@ -1,2 +1,0 @@
-radsecproxy.conf:/usr/local/etc/radsecproxy.conf
-rc.conf.d:/etc/rc.conf.d/radsecproxy

@@ -1,6 +1,0 @@
-{% if helpers.exists('Muro.netsnmp.general.enabled') and Muro.netsnmp.general.enabled == '1' %}
-snmpd_setup="/usr/local/opnsense/scripts/Muro/Netsnmp/setup.sh"
-snmpd_enable="YES"
-{% else %}
-snmpd_enable="NO"
-{% endif %}

@@ -1,5 +1,0 @@
-{% if helpers.exists('Muro.zabbixproxy.general.enabled') and Muro.zabbixproxy.general.enabled == '1' %}
-{% if helpers.exists('Muro.zabbixproxy.general.encryption') and Muro.zabbixproxy.general.encryption == '1' %}
-{{ Muro.zabbixproxy.general.encryptionpsk }}
-{% endif %}
-{% endif %}

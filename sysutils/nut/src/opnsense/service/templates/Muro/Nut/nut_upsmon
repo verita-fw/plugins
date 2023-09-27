@@ -1,5 +1,0 @@
-{% if helpers.exists('Muro.Nut.general.enable') and Muro.Nut.general.enable == '1' %}
-nut_upsmon_enable="YES"
-{% else %}
-nut_upsmon_enable="NO"
-{% endif %}

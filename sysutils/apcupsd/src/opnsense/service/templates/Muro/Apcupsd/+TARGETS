@@ -1,3 +1,0 @@
-apcupsd:/etc/rc.conf.d/apcupsd
-apcupsd.conf:/usr/local/etc/apcupsd/apcupsd.conf
-syslog-filter.conf:/usr/local/opnsense/service/templates/Muro/Syslog/local/apcupsd.conf

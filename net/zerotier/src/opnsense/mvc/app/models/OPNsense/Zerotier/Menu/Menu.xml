@@ -1,8 +1,0 @@
-<menu>
-    <VPN>
-        <Zerotier order="150" VisibleName="SDWAN (Zerotier)">
-            <Settings order="40" VisibleName="Settings" url="/ui/zerotier"/>
-            <Overview order="50" VisibleName="Overview" url="/ui/zerotier/overview"/>
-        </Zerotier>
-    </VPN>
-</menu>

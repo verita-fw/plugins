@@ -1,7 +1,0 @@
-<menu>
-    <Services>
-        <WebProxy>
-            <ProxySSO VisibleName="Web-Proxy" order="232" url="/ui/proxysso" />
-        </WebProxy>
-    </Services>
-</menu>

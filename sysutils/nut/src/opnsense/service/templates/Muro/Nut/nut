@@ -1,6 +1,0 @@
-{% if helpers.exists('Muro.Nut.general.enable') and Muro.Nut.general.enable == '1' %}
-nut_setup="/usr/local/opnsense/scripts/Muro/Nut/setup.sh"
-nut_enable="YES"
-{% else %}
-nut_enable="NO"
-{% endif %}

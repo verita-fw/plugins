@@ -1,5 +1,0 @@
-<menu>
-  <Services>
-    <Net-SNMP order="300" url="/ui/netsnmp/general/index" />
-  </Services>
-</menu>

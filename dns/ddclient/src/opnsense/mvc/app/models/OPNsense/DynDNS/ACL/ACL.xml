@@ -1,9 +1,0 @@
-<acl>
-    <page-services-dyndns>
-        <name>Services: Dynamic DNS</name>
-        <patterns>
-            <pattern>ui/dyndns/*</pattern>
-            <pattern>api/dyndns/*</pattern>
-        </patterns>
-    </page-services-dyndns>
-</acl>
