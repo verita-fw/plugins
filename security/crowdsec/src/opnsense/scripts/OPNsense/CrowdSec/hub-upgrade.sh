@@ -7,7 +7,7 @@ test -x /usr/local/bin/cscli || exit 0
 upgraded=$(/usr/local/bin/cscli --error hub upgrade)
 
 if [ ! -e "/usr/local/etc/crowdsec/collections/opnsense.yaml" ]; then
-    /usr/local/bin/cscli --error collections install crowdsecurity/opnsense
+    /usr/local/bin/cscli --error collections install crowdsecurity/Muro
 fi
 
 if [ -n "$upgraded" ]; then

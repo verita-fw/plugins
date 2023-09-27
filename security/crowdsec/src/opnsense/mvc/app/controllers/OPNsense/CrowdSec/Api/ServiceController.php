@@ -22,9 +22,9 @@ class ServiceController extends ApiControllerBase
         $status = "failed";
         if ($this->request->isPost()) {
             $backend = new Backend();
-            $bckresult = trim($backend->configdRun('template reload Muro/CrowdSec'));
+            $bckresult = trim($backend->configdRun('template reload Muro/IDPS (Secondary Engine)'));
             if ($bckresult == "OK") {
-                $bckresult = trim($backend->configdRun('IDPS (Engine Secondary) reconfigure'));
+                $bckresult = trim($backend->configdRun('IDPS (Secondary Engine) reconfigure'));
                 if ($bckresult == "OK") {
                     $status = "ok";
                 }
@@ -41,7 +41,7 @@ class ServiceController extends ApiControllerBase
     public function statusAction()
     {
         $backend = new Backend();
-        $response = $backend->configdRun("crowdsec crowdsec-status");
+        $response = $backend->configdRun(" IDPS (Secondary Engine)-status");
 
         $status = "unknown";
         if (strpos($response, "not running") > 0) {
@@ -50,7 +50,7 @@ class ServiceController extends ApiControllerBase
             $status = "running";
         }
 
-        $response = $backend->configdRun("crowdsec crowdsec-firewall-status");
+        $response = $backend->configdRun("IDPS (Secondary Engine) IDPS (Secondary Engine)-firewall-status");
 
         $firewall_status = "unknown";
         if (strpos($response, "not running") > 0) {
@@ -72,7 +72,7 @@ class ServiceController extends ApiControllerBase
     public function debugAction()
     {
         $backend = new Backend();
-        $response = $backend->configdRun("crowdsec debug");
+        $response = $backend->configdRun("IDPS (Secondary Engine) debug");
         return array("message" => $response);
     }
 }

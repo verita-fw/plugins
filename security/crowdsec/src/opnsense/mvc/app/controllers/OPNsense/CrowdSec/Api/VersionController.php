@@ -23,6 +23,6 @@ class VersionController extends ApiControllerBase
     public function getAction()
     {
         $backend = new Backend();
-        return $backend->configdRun("IDPS (Engine Secondary) version");
+        return $backend->configdRun("IDPS (Secondary Engine ) version");
     }
 }

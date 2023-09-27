@@ -33,7 +33,7 @@ ul.nav>li>a {
 </style>
 
 <div>
-  Service status: crowdsec <span id="crowdsec-status">...</span> - firewall bouncer <span id="crowdsec-firewall-status">...</span>
+  Service status: IDPS (Secondary Engine ) <span id="crowdsec-status">...</span> - firewall bouncer <span id="crowdsec-firewall-status">...</span>
 </div>
 
 <ul class="nav nav-tabs" data-tabs="tabs" id="maintabs">
@@ -193,7 +193,7 @@ ul.nav>li>a {
     </div>
 
     <div id="decisions" class="tab-pane fade in">
-        Note: the decisions coming from the CAPI (signals collected by the CrowdSec users) do not appear here.
+        Note: the decisions coming from the CAPI (signals collected by the IDPS (Secondary Engine ) users) do not appear here.
         To show them, use <code>cscli decisions list -a</code> in a shell.
         <table class="table table-condensed table-hover table-striped">
             <thead>

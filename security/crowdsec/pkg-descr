@@ -10,7 +10,7 @@ Plugin Changelog
 
 1.0.6
 
- * default acquis.d/opnsense.yaml to "poll_without_inotify=true" which is now required
+ * default acquis.d/Muro.yaml to "poll_without_inotify=true" which is now required
    to acquire content from symlinks.
 
 1.0.5
@@ -79,5 +79,5 @@ Plugin Changelog
 
 0.0.5
 
-* fixed an issue that prevented the bouncer from banning IPs on opnsense
+* fixed an issue that prevented the bouncer from banning IPs on Muro
 * fixed support for notification plugins

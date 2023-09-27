@@ -23,7 +23,7 @@ class DecisionsController extends ApiControllerBase
     public function getAction()
     {
         $backend = new Backend();
-        $bckresult = json_decode(trim($backend->configdRun("IDPS (Engine Secondary) decisions-list")), true);
+        $bckresult = json_decode(trim($backend->configdRun("IDPS (Secondary Engine ) decisions-list")), true);
         if ($bckresult !== null) {
             // only return valid json type responses
             return $bckresult;
@@ -35,7 +35,7 @@ class DecisionsController extends ApiControllerBase
     {
         if ($this->request->isDelete()) {
             $backend = new Backend();
-            $bckresult = $backend->configdRun("IDPS (Engine Secondary) decisions-delete ${decision_id}");
+            $bckresult = $backend->configdRun("IDPS (Secondary Engine ) decisions-delete ${decision_id}");
             if ($bckresult !== null) {
                 // why does the action return \n\n for empty output?
                 if (trim($bckresult) === '') {

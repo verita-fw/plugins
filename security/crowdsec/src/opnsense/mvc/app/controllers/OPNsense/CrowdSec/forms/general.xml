@@ -3,10 +3,10 @@
   <!-- agent_enabled -->
   <field>
     <id>general.agent_enabled</id>
-    <label>Enable CrowdSec (IDS)</label>
+    <label>Enable IDPS (Secondary Engine ) (IDS)</label>
     <type>checkbox</type>
-    <help>Enable/disable the CrowdSec agent. Keep this enabled to detect
-      attacks and receive alerts from the CrowSec central service.</help>
+    <help>Enable/disable the IDPS (Secondary Engine ) agent. Keep this enabled to detect
+      attacks and receive alerts from the  central service.</help>
   </field>
 
   <!-- lapi_enabled -->
@@ -14,7 +14,7 @@
     <id>general.lapi_enabled</id>
     <label>Enable LAPI</label>
     <type>checkbox</type>
-    <help>Enable/disable the CrowdSec Local API. Keep this enabled unless you
+    <help>Enable/disable the IDPS (Secondary Engine ) Local API. Keep this enabled unless you
       connect to a LAPI on another machine.</help>
   </field>
 
@@ -36,7 +36,7 @@
       local_api_credentials.yaml, crowdsec-firewall-bouncer.yaml. The next
       two configuration options (lapi_listen_address, lapi_listen_port) will
       be ignored. Allows unsupported configurations like linking together
-      multiple opnsense instances or connecting to an existing crowdsec
+      multiple Muro instances or connecting to an existing IDPS (Secondary Engine )
       multi-server setup.</help>
   </field>
 
@@ -71,7 +71,7 @@
     <id>general.rules_log</id>
     <label>Enable log for rules</label>
     <type>checkbox</type>
-    <help>Enable log collection for CrowdSec's block rules.</help>
+    <help>Enable log collection for IDPS (Secondary Engine )'s block rules.</help>
   </field>
 
   <!-- rules_tag -->
@@ -79,7 +79,7 @@
     <id>general.rules_tag</id>
     <label>Tag for matched packets</label>
     <type>text</type>
-    <help>Add a tag to packets that are dropped by CrowdSec rules for
+    <help>Add a tag to packets that are dropped by IDPS (Secondary Engine ) rules for
       diagnostic purposes.</help>
   </field>
 

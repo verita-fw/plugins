@@ -82,7 +82,7 @@ def main():
         with open('/usr/local/etc/crowdsec/opnsense/settings.json') as f:
             settings = json.load(f)
     except FileNotFoundError:
-        logging.info("settings.json not found, won't change crowdsec config")
+        logging.info("settings.json not found, won't change IDPS (Secondary Engine ) config")
         return
 
     configure_agent(settings)

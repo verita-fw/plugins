@@ -78,9 +78,9 @@
 
         <ul>
             <li>
-                New acquisition files go under <code>/usr/local/etc/crowdsec/acquis.d</code>. See opnsense.yaml for details.
+                New acquisition files go under <code>/usr/local/etc/crowdsec/acquis.d</code>. See Muro.yaml for details.
                 The option <code>poll_without_inotify: true</code> is required if the acquitision targets are symlinks (which
-                is the case for most opnsense logs).
+                is the case for most Muro logs).
             </li>
             <li>
                 If your Muro is &lt;22.1, you must check "Disable circular logs" in the Settings menu for the
@@ -100,7 +100,7 @@
             <li>
                 The parsers, scenarios and all plugins from the Hub are periodically upgraded. The
                 <a href="https://hub.crowdsec.net/author/crowdsecurity/collections/freebsd">crowdsecurity/freebsd</a> and
-                <a href="https://hub.crowdsec.net/author/crowdsecurity/collections/opnsense">crowdsecurity/opnsense</a>
+                <a href="https://hub.crowdsec.net/author/crowdsecurity/collections/opnsense">crowdsecurity/Muro</a>
                 collections are installed by default.
             </li>
         </ul>

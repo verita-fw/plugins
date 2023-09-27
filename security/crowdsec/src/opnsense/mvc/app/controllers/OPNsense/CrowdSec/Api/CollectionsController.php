@@ -23,7 +23,7 @@ class CollectionsController extends ApiControllerBase
     public function getAction()
     {
         $backend = new Backend();
-        $bckresult = json_decode(trim($backend->configdRun("IDPS (Engine Secondary) collections-list")), true);
+        $bckresult = json_decode(trim($backend->configdRun("IDPS (Secondary Engine ) collections-list")), true);
         if ($bckresult !== null) {
             // only return valid json type responses
             return $bckresult;
