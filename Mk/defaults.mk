@@ -124,7 +124,7 @@ mfc: ensure-stable
 	@git apply /tmp/mfc.diff
 	@git add ${.CURDIR}/${MFC}
 	@if ! git diff --quiet HEAD; then \
-		git commit -m "${MFC:S/^.$/${PLUGIN_DIR}/}: sync with master"; \
+		git commit -m "${MFC:S/^.$/${PLUGIN_DIR}/}: sync with main"; \
 	fi
 .else
 	@git checkout stable/${PLUGIN_ABI}
@@ -132,19 +132,19 @@ mfc: ensure-stable
 		git cherry-pick --abort; \
 	fi
 .endif
-	@git checkout master
+	@git checkout main
 .endfor
 
 stable:
 	@git checkout stable/${PLUGIN_ABI}
 
-master:
-	@git checkout master
+main:
+	@git checkout main
 
 rebase:
 	@git checkout stable/${PLUGIN_ABI}
 	@git rebase -i
-	@git checkout master
+	@git checkout main
 
 log:
 	@git log --stat -p stable/${PLUGIN_ABI}
@@ -152,4 +152,4 @@ log:
 push:
 	@git checkout stable/${PLUGIN_ABI}
 	@git push
-	@git checkout master
+	@git checkout main
